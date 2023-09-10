@@ -1,0 +1,18 @@
+.add-contact-header {
+    text-align: center;
+}
+.input-wrapper {
+    margin: 10px;
+}
+
+.input-wrapper label {
+    margin-right: 20px;
+}
+
+.input-wrapper .name-label {
+    margin-right: 37px;
+}
+
+.add-contact-main button {
+    margin-left: 100px;
+}
