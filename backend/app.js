@@ -30,6 +30,20 @@ app.post("/contact", (req, res) => {
     res.status(200).json({message: "Successfully Added contact"});
 });
 
+app.delete("/contact/:id", (req, res) => {
+    const id = req.params.id;
+    const contacts = JSON.parse(readFileSync(dbPath, 'utf-8'));
+
+    const updatedContacts = contacts.filter(obj => obj.id !== id);
+
+    if (updatedContacts.length === contacts.length) {
+        res.sendStatus(404);
+    } else {
+        writeFileSync(dbPath, JSON.stringify(updatedContacts), 'utf-8');
+        res.sendStatus(204);
+    }
+})
+
 app.listen(5000, () => {
     console.log("Express APP is running at 5000 port");
 });
