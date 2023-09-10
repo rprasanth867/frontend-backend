@@ -1,12 +1,13 @@
 import React from "react";
 import ContactItem from "../ContactItem";
+import "./index.css";
 
 function Contacts({contacts, onClickDelete}) {
 
     return (
         <ul>
             {contacts.length === 0 && (
-                <p>No contacts</p>
+                <p className="no-contacts">No contacts</p>
             )}
             {contacts.map(contact => (
                 <ContactItem
